@@ -22,10 +22,17 @@
 
     .areas-container {
       display: grid;
-      grid-template-columns: repeat(2, minmax(300px, 450px));
-      gap: 2rem;
+      grid-template-columns: 1fr; /* Começa com 1 coluna */
+      gap: 1rem;
       justify-content: center;
-    }
+}
+
+@media (min-width: 768px) {
+    .areas-container {
+      grid-template-columns: repeat(2, minmax(300px, 450px)); /* 2 colunas a partir de tablets */
+  }
+}
+
 
     .area-card {
       background: #fff;
