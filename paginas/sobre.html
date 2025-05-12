@@ -11,8 +11,60 @@
       font-family: 'Roboto', sans-serif;
       background: #f9f9f9;
       color: #222;
-      padding: 2rem;
-      animation: fadeIn 1s ease-in;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
     }
 
     h1, h2 {
@@ -77,14 +129,27 @@
       padding-top: 1rem;
       border-top: 1px solid #ddd;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
+  <header>
+    <img src="img/logo.png" alt="Front Security" height="50">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="menu">
+      <a href="../index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="atuacao.html">Áreas de Atuação</a>
+      <a href="sobre.html">Quem Somos</a>
+      <a href="time.html">Nosso Time</a>
+      <a href="parceiros.html">Parceiros</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
   <h1>Quem Somos</h1>
   <p>A Front Security nasceu com o compromisso de proporcionar segurança de qualidade e excelência no atendimento. Atuamos com seriedade, ética e tecnologia, sempre buscando inovar para garantir tranquilidade e bem-estar aos nossos clientes.</p>
 
@@ -120,5 +185,13 @@
     <p><strong>Visão:</strong> Ser referência em segurança privada no Brasil.</p>
     <p><strong>Valores:</strong> Ética, respeito, inovação, responsabilidade e qualidade.</p>
   </div>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>

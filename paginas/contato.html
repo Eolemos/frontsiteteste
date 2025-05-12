@@ -11,23 +11,87 @@
       font-family: 'Roboto', sans-serif;
       background: #f9f9f9;
       color: #222;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    .content {
       padding: 2rem;
+      max-width: 800px;
+      margin: auto;
       animation: fadeIn 1s ease-in;
     }
+
     h1 {
       color: #14213d;
     }
+
     p {
       font-size: 1.1rem;
       line-height: 1.6;
     }
+
     .contact-info {
       margin-top: 2rem;
       font-size: 1.2rem;
     }
+
     .contact-info strong {
       color: #fca311;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -35,12 +99,40 @@
   </style>
 </head>
 <body>
-  <h1>Contato</h1>
-  <p>Entre em contato com a Front Security para solicitar um orçamento ou tirar suas dúvidas.</p>
-  <div class="contact-info">
-    <p><strong>Telefone / WhatsApp:</strong> (11) 93226-8006</p>
-    <p><strong>Email:</strong> atendimento@frontsecurity.com.br</p>
-    <p><strong>Atendimento:</strong> Segunda à sexta, das 08h às 18h</p>
+  <header>
+    <img src="img/logo.png" alt="Front Security" height="50">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="menu">
+      <a href="../index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="atuacao.html">Áreas de Atuação</a>
+      <a href="sobre.html">Quem Somos</a>
+      <a href="time.html">Nosso Time</a>
+      <a href="parceiros.html">Parceiros</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h1>Contato</h1>
+    <p>Entre em contato com a Front Security para solicitar um orçamento ou tirar suas dúvidas.</p>
+    <div class="contact-info">
+      <p><strong>Telefone / WhatsApp:</strong> (11) 93226-8006</p>
+      <p><strong>Email:</strong> atendimento@frontsecurity.com.br</p>
+      <p><strong>Atendimento:</strong> Segunda à sexta, das 08h às 18h</p>
+    </div>
   </div>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>

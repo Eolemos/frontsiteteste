@@ -8,59 +8,145 @@
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
-      padding: 2rem;
       background: #fff;
       color: #222;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    .content {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
       animation: fadeIn 1s ease-in-out;
     }
+
     h1 {
       color: #0d1b2a;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
+
     .servico {
       margin-bottom: 2rem;
     }
+
     .servico h2 {
       color: #fca311;
       font-size: 1.5rem;
     }
+
     .servico p {
       max-width: 800px;
     }
+
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <h1>Nossos Serviços</h1>
+  <header>
+    <img src="img/logo.png" alt="Front Security" height="50">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="menu">
+      <a href="../index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="atuacao.html">Áreas de Atuação</a>
+      <a href="sobre.html">Quem Somos</a>
+      <a href="time.html">Nosso Time</a>
+      <a href="parceiros.html">Parceiros</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
 
-  <div class="servico">
-    <h2>Segurança Patrimonial</h2>
-    <p>Proteção de empresas, residências e patrimônio com vigilantes treinados e preparados.</p>
+  <div class="content">
+    <h1>Nossos Serviços</h1>
+
+    <div class="servico">
+      <h2>Segurança Patrimonial</h2>
+      <p>Proteção de empresas, residências e patrimônio com vigilantes treinados e preparados.</p>
+    </div>
+
+    <div class="servico">
+      <h2>Portaria Presencial e Remota</h2>
+      <p>Controle de acesso de forma presencial ou via tecnologia, garantindo praticidade e segurança.</p>
+    </div>
+
+    <div class="servico">
+      <h2>Ronda Motorizada</h2>
+      <p>Rondas constantes com equipes motorizadas para inibir ações criminosas e aumentar a vigilância.</p>
+    </div>
+
+    <div class="servico">
+      <h2>Eventos e Ocasiões Especiais</h2>
+      <p>Serviços personalizados de segurança para eventos corporativos, festas e grandes reuniões.</p>
+    </div>
   </div>
 
-  <div class="servico">
-    <h2>Portaria Presencial e Remota</h2>
-    <p>Controle de acesso de forma presencial ou via tecnologia, garantindo praticidade e segurança.</p>
-  </div>
-
-  <div class="servico">
-    <h2>Ronda Motorizada</h2>
-    <p>Rondas constantes com equipes motorizadas para inibir ações criminosas e aumentar a vigilância.</p>
-  </div>
-
-  <div class="servico">
-    <h2>Eventos e Ocasiões Especiais</h2>
-    <p>Serviços personalizados de segurança para eventos corporativos, festas e grandes reuniões.</p>
-  </div>
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>

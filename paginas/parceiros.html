@@ -8,78 +8,128 @@
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
-      padding: 2rem;
       background: #f9f9f9;
       text-align: center;
     }
+
+    header {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
     h2 {
       font-size: 2.5rem;
       color: #003366;
       display: inline-block;
       border-bottom: 5px solid #fca311;
       padding-bottom: 0.5rem;
+      margin-top: 2rem;
     }
+
     .parceiros-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 3rem;
       margin-top: 3rem;
+      padding: 0 2rem;
     }
+
     .parceiro {
       text-align: center;
     }
+
     .parceiro img {
       height: 120px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="img/logo.png" alt="Front Security" height="50">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="menu">
+      <a href="../index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="atuacao.html">Áreas de Atuação</a>
+      <a href="sobre.html">Quem Somos</a>
+      <a href="time.html">Nosso Time</a>
+      <a href="parceiros.html">Parceiros</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
 
   <h2>Nossos Parceiros</h2>
   <div class="parceiros-container">
-
-    <div class="parceiro">
-      <img src="img/xyz.png" alt="XYZ Live">
-      <p>XYZ Live</p>
-    </div>
-
-    <div class="parceiro">
-      <img src="img/jai.png" alt="Jai">
-      <p>Jah</p>
-    </div>
-
-    <div class="parceiro">
-      <img src="img/vitaurbana.png" alt="Vita Urbana">
-      <p>Vita Urbana</p>
-    </div>
-
-    <div class="parceiro">
-      <img src="img/dnaeventos.png" alt="DNA Eventos">
-      <p>DNA Eventos</p>
-    </div>
-
-    <div class="parceiro">
-      <img src="img/metalbar.png" alt="The Metal Bar">
-      <p>The Metal Bar</p>
-    </div>
-
-    <div class="parceiro">
-      <img src="img/fachada.png" alt="Fachada">
-      <p>Fachada</p>
-    </div>
-
-    <div class="parceiro">
-      <img src="img/mutala.png" alt="Mutala">
-      <p>Mutala</p>
-    </div>
-
-    <div class="parceiro">
-      <img src="img/varal.png" alt="Varal">
-      <p>Varal</p>
-    </div>
-
+    <div class="parceiro"><img src="img/xyz.png" alt="XYZ Live"><p>XYZ Live</p></div>
+    <div class="parceiro"><img src="img/jai.png" alt="Jai"><p>Jah</p></div>
+    <div class="parceiro"><img src="img/vitaurbana.png" alt="Vita Urbana"><p>Vita Urbana</p></div>
+    <div class="parceiro"><img src="img/dnaeventos.png" alt="DNA Eventos"><p>DNA Eventos</p></div>
+    <div class="parceiro"><img src="img/metalbar.png" alt="The Metal Bar"><p>The Metal Bar</p></div>
+    <div class="parceiro"><img src="img/fachada.png" alt="Fachada"><p>Fachada</p></div>
+    <div class="parceiro"><img src="img/mutala.png" alt="Mutala"><p>Mutala</p></div>
+    <div class="parceiro"><img src="img/varal.png" alt="Varal"><p>Varal</p></div>
   </div>
 
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
