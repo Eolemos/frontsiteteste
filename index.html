@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Front Security - Responsivo</title>
+  <meta name="description" content="Empresa de segurança especializada em soluções confiáveis para proteger o que mais importa.">
+
+  <title>Front Security</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -11,137 +14,76 @@
       background: #f9f9f9;
       color: #222;
     }
-
     header {
-      background: #000;
+      background: #000000;
       color: #fff;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    .logo {
-      height: 50px;
-    }
-
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-
     nav a {
+      margin: 0 1rem;
       color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
-
-    /* Menu hamburguer */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
+    nav a:hover {
+      color: #fca311;
     }
-
-    .menu-toggle span {
-      background: #fff;
-      height: 3px;
-      width: 25px;
-      margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: #000;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        padding: 1rem;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    .content {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .areas-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    @media (min-width: 768px) {
-      .areas-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .area-card {
-      background: #fff;
-      padding: 1rem;
-      border-left: 5px solid #fca311;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      border-radius: 8px;
+    .hero {
       text-align: center;
-      transition: 0.3s;
+      padding: 4rem 2rem;
+      background-image: url('paginas/img/background.png'); /* Caminho da imagem de fundo */
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero button {
+      background: #fca311;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      color: #000;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    iframe {
+      width: 100%;
+      min-height: 300px;
+      border: none;
+      display: block;
+      margin: 0;
     }
 
-    .area-card:hover {
-      transform: scale(1.03);
-    }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="paginas/img/logo.png" alt="Logo" class="logo">
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="menu">
-      <a href="#">servicos</a>
-      <a href="#">atuacao</a>
-      <a href="#">sobre</a>
-      <a href="#">time</a>
-      <a href="#">parceiros</a>
-      <a href="#">contato</a>
+    <img src="paginas/img/logo.png" alt="Front Security" height="90">
+    <nav>
+      <a href="paginas/servicos.html" target="contentFrame">Serviços</a>
+      <a href="paginas/atuacao.html" target="contentFrame">Áreas de Atuação</a>
+      <a href="paginas/sobre.html" target="contentFrame">Quem Somos</a>
+      <a href="paginas/time.html" target="contentFrame">Nosso Time</a>
+      <a href="paginas/parceiros.html" target="contentFrame">Parceiros</a>
+      <a href="paginas/contato.html" target="contentFrame">Contato</a>
     </nav>
   </header>
 
-  <div class="content">
-    <h1>Áreas de Atuação</h1>
-    <div class="areas-container">
-      <div class="area-card">Condomínios</div>
-      <div class="area-card">Prédios Comerciais</div>
-      <div class="area-card">Stands de Vendas</div>
-      <div class="area-card">Terrenos</div>
-      <div class="area-card">Residências</div>
-      <div class="area-card">Eventos</div>
-    </div>
+  <div class="hero">
+    <h1>Excelência, confiança e presença onde a sua segurança importa.</h1>
+    <a href="https://wa.me/5511932268006"><button>Fale Conosco no WhatsApp</button></a>
   </div>
 
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+  <iframe name="contentFrame" src="paginas/servicos.html" height="600"></iframe>
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-  </script>
 </body>
 </html>
