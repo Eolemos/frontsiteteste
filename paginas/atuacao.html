@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front Security - Áreas de Atuação</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    h1 {
+      color: #0d1b2a;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .areas-container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(300px, 450px));
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .area-card {
+      background: #fff;
+      border-left: 5px solid #fca311;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .area-card:hover {
+      transform: scale(1.05);
+      z-index: 10;
+    }
+
+    .area-card img {
+      width: 50px;
+      height: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .area-card:hover img {
+      width: 70px;
+      height: 70px;
+    }
+
+    .area-card span {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      transition: font-size 0.3s ease;
+    }
+
+    .area-card:hover span {
+      font-size: 1.6rem;
+    }
+
+    .extra-info {
+      display: none;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .area-card:hover .extra-info {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Áreas de Atuação</h1>
+  <div class="areas-container">
+    <div class="area-card">
+      <img src="img/condominio.png" alt="Condomínios">
+      <span>Condomínios</span>
+      <div class="extra-info">Proteção completa para áreas comuns, acessos e moradores 24h.</div>
+    </div>
+    <div class="area-card">
+      <img src="img/predio.png" alt="Prédios Comerciais">
+      <span>Prédios Comerciais</span>
+      <div class="extra-info">Acesso seguro para prédios e empresas comerciais.</div>
+    </div>
+    <div class="area-card">
+      <img src="img/stand.png" alt="Stands de Vendas">
+      <span>Stands de Vendas</span>
+      <div class="extra-info">Segurança especializada para lançamentos e feiras.</div>
+    </div>
+    <div class="area-card">
+      <img src="img/terreno.png" alt="Terrenos">
+      <span>Terrenos</span>
+      <div class="extra-info">Monitoramento de terrenos abertos e construções paradas.</div>
+    </div>
+    <div class="area-card">
+      <img src="img/residencia.png" alt="Residências">
+      <span>Residências</span>
+      <div class="extra-info">Proteção personalizada para residências e famílias.</div>
+    </div>
+    <div class="area-card">
+      <img src="img/evento.png" alt="Eventos">
+      <span>Eventos</span>
+      <div class="extra-info">Controle de acesso em eventos com grande público.</div>
+    </div>
+  </div>
+</body>
+</html>

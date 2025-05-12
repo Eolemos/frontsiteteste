@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Empresa de segurança especializada em soluções confiáveis para proteger o que mais importa.">
+
+  <title>Front Security</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background: #000000;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #fca311;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background-image: url('paginas/img/background.png'); /* Caminho da imagem de fundo */
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero button {
+      background: #fca311;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      color: #000;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    iframe {
+      width: 100%;
+      min-height: 300px;
+      border: none;
+      display: block;
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="paginas/img/logo.png" alt="Front Security" height="90">
+    <nav>
+      <a href="paginas/servicos.html" target="contentFrame">Serviços</a>
+      <a href="paginas/atuacao.html" target="contentFrame">Áreas de Atuação</a>
+      <a href="paginas/sobre.html" target="contentFrame">Quem Somos</a>
+      <a href="paginas/time.html" target="contentFrame">Nosso Time</a>
+      <a href="paginas/parceiros.html" target="contentFrame">Parceiros</a>
+      <a href="paginas/contato.html" target="contentFrame">Contato</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Excelência, confiança e presença onde a sua segurança importa.</h1>
+    <a href="https://wa.me/5511932268006"><button>Fale Conosco no WhatsApp</button></a>
+  </div>
+
+  <iframe name="contentFrame" src="paginas/servicos.html" height="600"></iframe>
+
+</body>
+</html>
