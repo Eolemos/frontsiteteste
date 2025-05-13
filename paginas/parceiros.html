@@ -9,7 +9,7 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       background: #f9f9f9;
-      text-align: center;
+      color: #222;
     }
 
     header {
@@ -66,30 +66,51 @@
       }
     }
 
-    h2 {
-      font-size: 2.5rem;
-      color: #003366;
-      display: inline-block;
-      border-bottom: 5px solid #fca311;
-      padding-bottom: 0.5rem;
+    h1 {
+      text-align: center;
       margin-top: 2rem;
     }
 
-    .parceiros-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 3rem;
-      margin-top: 3rem;
-      padding: 0 2rem;
+    .accordion {
+      max-width: 800px;
+      margin: 2rem auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
     }
 
-    .parceiro {
-      text-align: center;
+    .accordion-item {
+      border-top: 1px solid #ddd;
     }
 
-    .parceiro img {
-      height: 120px;
+    .accordion-title {
+      background: #fca311;
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 1rem;
+      background: #fff;
+    }
+
+    .posto {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .map-preview {
+      display: none;
+      margin-top: 0.5rem;
+    }
+
+    .posto:hover .map-preview {
+      display: block;
     }
   </style>
 </head>
@@ -97,31 +118,115 @@
   <header>
     <img src="img/logo.png" alt="Front Security" height="50">
     <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
     <nav id="menu">
       <a href="../index.html">Início</a>
       <a href="servicos.html">Serviços</a>
       <a href="atuacao.html">Áreas de Atuação</a>
       <a href="sobre.html">Quem Somos</a>
-      <a href="time.html">Nosso Time</a>
       <a href="parceiros.html">Parceiros</a>
       <a href="contato.html">Contato</a>
     </nav>
   </header>
 
-  <h2>Nossos Parceiros</h2>
-  <div class="parceiros-container">
-    <div class="parceiro"><img src="img/xyz.png" alt="XYZ Live"><p>XYZ Live</p></div>
-    <div class="parceiro"><img src="img/jai.png" alt="Jai"><p>Jah</p></div>
-    <div class="parceiro"><img src="img/vitaurbana.png" alt="Vita Urbana"><p>Vita Urbana</p></div>
-    <div class="parceiro"><img src="img/dnaeventos.png" alt="DNA Eventos"><p>DNA Eventos</p></div>
-    <div class="parceiro"><img src="img/metalbar.png" alt="The Metal Bar"><p>The Metal Bar</p></div>
-    <div class="parceiro"><img src="img/fachada.png" alt="Fachada"><p>Fachada</p></div>
-    <div class="parceiro"><img src="img/mutala.png" alt="Mutala"><p>Mutala</p></div>
-    <div class="parceiro"><img src="img/varal.png" alt="Varal"><p>Varal</p></div>
+  <h1>Nossos Parceiros</h1>
+
+  <div class="accordion">
+
+    <div class="accordion-item">
+      <div class="accordion-title">Vita Urbana</div>
+      <div class="accordion-content">
+        <div class="posto">Unidade Barão de Campinas
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+        <div class="posto">Unidade Liberdade
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+        <div class="posto">Unidade Palmeiras
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+        <div class="posto">Unidade 4
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+        <div class="posto">Unidade 5
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-title">Confraria</div>
+      <div class="accordion-content">
+        <div class="posto">Unidade Principal
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-title">Jai</div>
+      <div class="accordion-content">
+        <div class="posto">Unidade Principal
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-title">Seleta</div>
+      <div class="accordion-content">
+        <div class="posto">Unidade Principal
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-title">The Metal Bar</div>
+      <div class="accordion-content">
+        <div class="posto">Unidade Principal
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-title">Varal Bar</div>
+      <div class="accordion-content">
+        <div class="posto">Unidade Principal
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-title">Fachada</div>
+      <div class="accordion-content">
+        <div class="posto">Unidade Principal
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-title">Limpeza Front</div>
+      <div class="accordion-content">
+        <div class="posto">Unidade a definir
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-title">Cachorra Bar</div>
+      <div class="accordion-content">
+        <div class="posto">Unidade Principal
+          <div class="map-preview">[Mapa ou descrição]</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script>
@@ -129,6 +234,14 @@
     const menu = document.getElementById('menu');
     toggle.addEventListener('click', () => {
       menu.classList.toggle('show');
+    });
+
+    const accordionTitles = document.querySelectorAll('.accordion-title');
+    accordionTitles.forEach(title => {
+      title.addEventListener('click', () => {
+        const content = title.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
     });
   </script>
 </body>
