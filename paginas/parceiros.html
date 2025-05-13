@@ -13,6 +13,60 @@
       padding: 2rem;
     }
 
+    header {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
     h1 {
       text-align: center;
       margin-bottom: 2rem;
@@ -50,7 +104,6 @@
     }
   </style>
 </head>
-</head>
 <body>
   <header>
     <img src="img/logo.png" alt="Front Security" height="50">
@@ -68,10 +121,9 @@
       <a href="contato.html">Contato</a>
     </nav>
   </header>
-<body>
+
   <h1>Nossos Parceiros</h1>
 
-  <!-- Vita Urbana -->
   <div class="parceiro">
     <div class="parceiro-header" onclick="toggleParceiro(this)">
       <img src="img/vitaurbana.png" alt="Vita Urbana">
@@ -79,35 +131,23 @@
     </div>
     <div class="parceiro-content">
       <p>Unidade Barão de Campinas</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
-
       <p>Unidade Liberdade</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
-
       <p>Unidade Palmeiras</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
-
       <p>Unidade 4</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
-
       <p>Unidade 5</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
 
-  <!-- Confraria -->
   <div class="parceiro">
     <div class="parceiro-header" onclick="toggleParceiro(this)">
-      <img src="[deixe o caminho para logo aqui]" alt="Confraria">
+      <img src="deixe o caminho para logo aqui" alt="Confraria">
       <strong>Confraria</strong>
     </div>
     <div class="parceiro-content">
       <p>Unidade Principal</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
 
-  <!-- Jai -->
   <div class="parceiro">
     <div class="parceiro-header" onclick="toggleParceiro(this)">
       <img src="img/jai.png" alt="Jai">
@@ -115,23 +155,19 @@
     </div>
     <div class="parceiro-content">
       <p>Unidade Principal</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
 
-  <!-- Seleta -->
   <div class="parceiro">
     <div class="parceiro-header" onclick="toggleParceiro(this)">
-      <img src="[deixe o caminho para logo aqui]" alt="Seleta">
+      <img src="deixe o caminho para logo aqui" alt="Seleta">
       <strong>Seleta</strong>
     </div>
     <div class="parceiro-content">
       <p>Unidade Principal</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
 
-  <!-- The Metal Bar -->
   <div class="parceiro">
     <div class="parceiro-header" onclick="toggleParceiro(this)">
       <img src="img/metalbar.png" alt="The Metal Bar">
@@ -139,11 +175,9 @@
     </div>
     <div class="parceiro-content">
       <p>Unidade Principal</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
 
-  <!-- Varal Bar -->
   <div class="parceiro">
     <div class="parceiro-header" onclick="toggleParceiro(this)">
       <img src="img/varal.png" alt="Varal Bar">
@@ -151,11 +185,9 @@
     </div>
     <div class="parceiro-content">
       <p>Unidade Principal</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
 
-  <!-- Fachada -->
   <div class="parceiro">
     <div class="parceiro-header" onclick="toggleParceiro(this)">
       <img src="img/fachada.png" alt="Fachada">
@@ -163,35 +195,36 @@
     </div>
     <div class="parceiro-content">
       <p>Unidade Principal</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
 
-  <!-- Limpeza Front -->
   <div class="parceiro">
     <div class="parceiro-header" onclick="toggleParceiro(this)">
-      <img src="[deixe o caminho para logo aqui]" alt="Limpeza Front">
+      <img src="deixe o caminho para logo aqui" alt="Limpeza Front">
       <strong>Limpeza Front</strong>
     </div>
     <div class="parceiro-content">
       <p>Unidade a definir</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
 
-  <!-- Cachorra Bar -->
   <div class="parceiro">
     <div class="parceiro-header" onclick="toggleParceiro(this)">
-      <img src="[deixe o caminho para logo aqui]" alt="Cachorra Bar">
+      <img src="deixe o caminho para logo aqui" alt="Cachorra Bar">
       <strong>Cachorra Bar</strong>
     </div>
     <div class="parceiro-content">
       <p>Unidade Principal</p>
-      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
 
   <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
     function toggleParceiro(element) {
       const container = element.parentElement;
       container.classList.toggle('open');
