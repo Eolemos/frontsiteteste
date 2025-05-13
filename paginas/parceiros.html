@@ -10,216 +10,174 @@
       margin: 0;
       background: #f9f9f9;
       color: #222;
-    }
-
-    header {
-      background: #000;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-    }
-
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      background: #fff;
-      height: 3px;
-      width: 25px;
-      margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: #000;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        padding: 1rem;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
+      padding: 2rem;
     }
 
     h1 {
       text-align: center;
-      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
 
-    .accordion {
+    .parceiro {
       max-width: 800px;
-      margin: 2rem auto;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      margin: 1rem auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       overflow: hidden;
+      transition: all 0.3s ease;
     }
 
-    .accordion-item {
-      border-top: 1px solid #ddd;
-    }
-
-    .accordion-title {
-      background: #ffffff;
-      padding: 1rem;
-      cursor: pointer;
-      font-weight: bold;
+    .parceiro-header {
       display: flex;
       align-items: center;
-      gap: 1rem;
-    }
-
-    .accordion-content {
-      display: none;
       padding: 1rem;
-      background: #fff;
-    }
-
-    .posto {
-      margin-bottom: 1rem;
-      padding: 0.5rem;
-      border: 1px solid #eee;
-      border-radius: 5px;
       cursor: pointer;
     }
 
-    .map-preview {
-      display: none;
-      margin-top: 0.5rem;
+    .parceiro-header img {
+      height: 50px;
+      margin-right: 1rem;
     }
 
-    .posto:hover .map-preview {
+    .parceiro-content {
+      display: none;
+      padding: 1rem;
+    }
+
+    .parceiro.open .parceiro-content {
       display: block;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="img/logo.png" alt="Front Security" height="50">
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
-    <nav id="menu">
-      <a href="../index.html">Início</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="atuacao.html">Áreas de Atuação</a>
-      <a href="sobre.html">Quem Somos</a>
-      <a href="parceiros.html">Parceiros</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-  </header>
-
   <h1>Nossos Parceiros</h1>
 
-  <div class="accordion">
-
-    <div class="accordion-item">
-      <div class="accordion-title"><img src="img/vitaurbana.png" alt="Vita Urbana" height="50"> Vita Urbana</div>
-      <div class="accordion-content">
-        <div class="posto">Unidade Barão de Campinas <div class="map-preview">[Mapa ou descrição]</div></div>
-        <div class="posto">Unidade Liberdade <div class="map-preview">[Mapa ou descrição]</div></div>
-        <div class="posto">Unidade Palmeiras <div class="map-preview">[Mapa ou descrição]</div></div>
-        <div class="posto">Unidade 4 <div class="map-preview">[Mapa ou descrição]</div></div>
-        <div class="posto">Unidade 5 <div class="map-preview">[Mapa ou descrição]</div></div>
-      </div>
+  <!-- Vita Urbana -->
+  <div class="parceiro">
+    <div class="parceiro-header" onclick="toggleParceiro(this)">
+      <img src="img/vitaurbana.png" alt="Vita Urbana">
+      <strong>Vita Urbana</strong>
     </div>
+    <div class="parceiro-content">
+      <p>Unidade Barão de Campinas</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
 
-    <div class="accordion-item">
-      <div class="accordion-title">Confraria (Logo faltando)</div>
-      <div class="accordion-content">
-        <div class="posto">Unidade Principal <div class="map-preview">[Mapa ou descrição]</div></div>
-      </div>
+      <p>Unidade Liberdade</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+
+      <p>Unidade Palmeiras</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+
+      <p>Unidade 4</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+
+      <p>Unidade 5</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
+  </div>
 
-    <div class="accordion-item">
-      <div class="accordion-title"><img src="img/jai.png" alt="Jai" height="50"> Jai</div>
-      <div class="accordion-content">
-        <div class="posto">Unidade Principal <div class="map-preview">[Mapa ou descrição]</div></div>
-      </div>
+  <!-- Confraria -->
+  <div class="parceiro">
+    <div class="parceiro-header" onclick="toggleParceiro(this)">
+      <img src="[deixe o caminho para logo aqui]" alt="Confraria">
+      <strong>Confraria</strong>
     </div>
-
-    <div class="accordion-item">
-      <div class="accordion-title">Seleta (Logo faltando)</div>
-      <div class="accordion-content">
-        <div class="posto">Unidade Principal <div class="map-preview">[Mapa ou descrição]</div></div>
-      </div>
+    <div class="parceiro-content">
+      <p>Unidade Principal</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
+  </div>
 
-    <div class="accordion-item">
-      <div class="accordion-title"><img src="img/metalbar.png" alt="The Metal Bar" height="50"> The Metal Bar</div>
-      <div class="accordion-content">
-        <div class="posto">Unidade Principal <div class="map-preview">[Mapa ou descrição]</div></div>
-      </div>
+  <!-- Jai -->
+  <div class="parceiro">
+    <div class="parceiro-header" onclick="toggleParceiro(this)">
+      <img src="img/jai.png" alt="Jai">
+      <strong>Jai</strong>
     </div>
-
-    <div class="accordion-item">
-      <div class="accordion-title"><img src="img/varal.png" alt="Varal Bar" height="50"> Varal Bar</div>
-      <div class="accordion-content">
-        <div class="posto">Unidade Principal <div class="map-preview">[Mapa ou descrição]</div></div>
-      </div>
+    <div class="parceiro-content">
+      <p>Unidade Principal</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
+  </div>
 
-    <div class="accordion-item">
-      <div class="accordion-title"><img src="img/fachada.png" alt="Fachada" height="50"> Fachada</div>
-      <div class="accordion-content">
-        <div class="posto">Unidade Principal <div class="map-preview">[Mapa ou descrição]</div></div>
-      </div>
+  <!-- Seleta -->
+  <div class="parceiro">
+    <div class="parceiro-header" onclick="toggleParceiro(this)">
+      <img src="[deixe o caminho para logo aqui]" alt="Seleta">
+      <strong>Seleta</strong>
     </div>
-
-    <div class="accordion-item">
-      <div class="accordion-title">Limpeza Front (Logo faltando)</div>
-      <div class="accordion-content">
-        <div class="posto">Unidade a definir <div class="map-preview">[Mapa ou descrição]</div></div>
-      </div>
+    <div class="parceiro-content">
+      <p>Unidade Principal</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
     </div>
+  </div>
 
-    <div class="accordion-item">
-      <div class="accordion-title">Cachorra Bar (Logo faltando)</div>
-      <div class="accordion-content">
-        <div class="posto">Unidade Principal <div class="map-preview">[Mapa ou descrição]</div></div>
-      </div>
+  <!-- The Metal Bar -->
+  <div class="parceiro">
+    <div class="parceiro-header" onclick="toggleParceiro(this)">
+      <img src="img/metalbar.png" alt="The Metal Bar">
+      <strong>The Metal Bar</strong>
     </div>
+    <div class="parceiro-content">
+      <p>Unidade Principal</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+    </div>
+  </div>
 
+  <!-- Varal Bar -->
+  <div class="parceiro">
+    <div class="parceiro-header" onclick="toggleParceiro(this)">
+      <img src="img/varal.png" alt="Varal Bar">
+      <strong>Varal Bar</strong>
+    </div>
+    <div class="parceiro-content">
+      <p>Unidade Principal</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- Fachada -->
+  <div class="parceiro">
+    <div class="parceiro-header" onclick="toggleParceiro(this)">
+      <img src="img/fachada.png" alt="Fachada">
+      <strong>Fachada</strong>
+    </div>
+    <div class="parceiro-content">
+      <p>Unidade Principal</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- Limpeza Front -->
+  <div class="parceiro">
+    <div class="parceiro-header" onclick="toggleParceiro(this)">
+      <img src="[deixe o caminho para logo aqui]" alt="Limpeza Front">
+      <strong>Limpeza Front</strong>
+    </div>
+    <div class="parceiro-content">
+      <p>Unidade a definir</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- Cachorra Bar -->
+  <div class="parceiro">
+    <div class="parceiro-header" onclick="toggleParceiro(this)">
+      <img src="[deixe o caminho para logo aqui]" alt="Cachorra Bar">
+      <strong>Cachorra Bar</strong>
+    </div>
+    <div class="parceiro-content">
+      <p>Unidade Principal</p>
+      <iframe src="[LINK DO MAPA AQUI]" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+    </div>
   </div>
 
   <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-
-    const accordionTitles = document.querySelectorAll('.accordion-title');
-    accordionTitles.forEach(title => {
-      title.addEventListener('click', () => {
-        const content = title.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-      });
-    });
+    function toggleParceiro(element) {
+      const container = element.parentElement;
+      container.classList.toggle('open');
+    }
   </script>
 </body>
 </html>
