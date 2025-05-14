@@ -109,11 +109,13 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      border-radius: 8px;
     }
 
     .parceiro-hover img {
       height: 200px;
-      width: auto;
+      width: 200px;
+      object-fit: cover;
       display: block;
       transition: transform 0.3s ease;
     }
@@ -126,6 +128,7 @@
       width: 100%;
       opacity: 0;
       transition: opacity 0.3s ease, transform 0.3s ease;
+      object-fit: cover;
     }
 
     .parceiro-hover:hover .overlay {
@@ -152,7 +155,7 @@
   </header>
 
   <h1>Nossos Parceiros</h1>
-
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 2rem;">
   <div class="parceiro-hover">
     <img src="img/vitaurbana.png" alt="Vita Urbana">
     <img class="overlay" src="img/qra_vita.jpg" alt="QRA Vita Urbana">
@@ -193,6 +196,7 @@
     <img class="overlay" src="img/qra_cachorrabar.jpg" alt="QRA Cachorra Bar">
   </div>
  </div>
+</div>
 <footer style="text-align: center; padding: 10px; background-color: #111; color: #fff; font-size: 14px;">
   &copy; 2025 Front Security. Todos os direitos reservados.
 </footer>
