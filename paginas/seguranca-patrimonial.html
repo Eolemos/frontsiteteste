@@ -32,40 +32,6 @@
       font-weight: bold;
     }
 
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      background: #fff;
-      height: 3px;
-      width: 25px;
-      margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: #000;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        padding: 1rem;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
     .content {
       padding: 2rem;
       max-width: 900px;
@@ -100,12 +66,7 @@
 </head>
 <body>
   <header>
-    <img src="img/logo.png" alt="Front Security" height="50">
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <img src="img/logo.png" alt="Front Security" height="65">
     <nav id="menu">
       <a href="servicos.html">Voltar</a>
     </nav>
@@ -114,7 +75,7 @@
     <h1>Serviço de Segurança Patrimonial</h1>
     <p>O serviço de <strong>Segurança Patrimonial</strong> da Front Security é a escolha ideal para quem busca proteção contínua e de alta qualidade para empresas, condomínios, indústrias, shoppings e residências de alto padrão.</p>
 
-    <img src="img/seguranca-patrimonial-banner.jpg" alt="Segurança Patrimonial" style="width:100%; margin: 2rem 0; border-radius: 8px;">
+    <img src="img/seguranca-patrimonial-banner.png" alt="Segurança Patrimonial" style="width:100%; margin: 2rem 0; border-radius: 8px;">
 
     <h2>O que oferecemos?</h2>
     <p>Nossos profissionais são treinados e capacitados para proteger pessoas e patrimônios com postura, disciplina e técnicas operacionais que garantem a eficiência do serviço. Trabalhamos com foco em:</p>
@@ -140,7 +101,7 @@
     <h2>Por que contratar nossa segurança?</h2>
     <p>Contar com a <strong>Segurança Patrimonial</strong> da Front Security é proteger o que realmente importa. Nosso compromisso é agir de forma preventiva e inteligente, minimizando riscos e garantindo a tranquilidade dos nossos clientes.</p>
 
-    <img src="img/equipe-vigilancia.jpg" alt="Equipe de Vigilância" style="width:100%; margin: 2rem 0; border-radius: 8px;">
+    <img src="img/equipe-vigilancia.png" alt="Equipe de Vigilância" style="width:100%; margin: 2rem 0; border-radius: 8px;">
 
     <h2>Solicite agora seu orçamento</h2>
     <p>Entre em contato com a nossa equipe comercial e solicite uma proposta personalizada para o seu negócio. Oferecemos atendimento em toda a região, com visitas técnicas para diagnóstico e elaboração do plano ideal para você.</p>
@@ -151,13 +112,5 @@
   <footer style="text-align: center; padding: 10px; background-color: #111; color: #fff; font-size: 14px;">
     &copy; 2025 Front Security. Todos os direitos reservados.
   </footer>
-
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-  </script>
 </body>
 </html>
