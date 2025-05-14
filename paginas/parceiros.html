@@ -146,11 +146,35 @@
       object-fit: contain;
     }
 
-    .parceiro-varal .overlay {
-      object-fit: contain;
-      width: 200px ;
-      height: 200px ;
-    }
+.parceiro-varal {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.parceiro-varal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.parceiro-varal .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.parceiro-varal:hover .overlay {
+  opacity: 1;
+  transform: scale(1.05);
+}
   </style>
 </head>
 <body>
