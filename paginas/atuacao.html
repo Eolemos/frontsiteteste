@@ -6,10 +6,16 @@
   <title>Front Security - Áreas de Atuação</title>
   <style>
     body {
+      display: flex;
       font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
       margin: 0;
       background: #f9f9f9;
       color: #222;
+    }
+
+    .content {
+      flex: 1;
     }
 
     header {
@@ -156,6 +162,7 @@
     </nav>
   </header>
 
+<div class="content">
   <h1>Áreas de Atuação</h1>
   <div class="areas-container">
     <div class="area-card">
@@ -189,6 +196,7 @@
       <div class="extra-info">Controle de acesso em eventos com grande público.</div>
     </div>
   </div>
+</div>
 
   <script>
     const toggle = document.getElementById('menu-toggle');
