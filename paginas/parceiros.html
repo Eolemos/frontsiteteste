@@ -105,6 +105,33 @@
     .parceiro.open .parceiro-content {
       display: block;
     }
+    .parceiro-hover {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .parceiro-hover img {
+      height: 200px;
+      width: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .parceiro-hover .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .parceiro-hover:hover .overlay {
+      opacity: 1;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -126,67 +153,49 @@
 
   <h1>Nossos Parceiros</h1>
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 2rem;">
-  <div style="position: relative; overflow: hidden;">
-    <img src="img/vitaurbana.png" alt="Vita Urbana" style="height: 150px; cursor: pointer; transition: transform 0.3s;">
-    <img src="img/seguranca-patrimonial-banner.png" alt="QRA Vita Urbana" style="position: absolute; top: 0; left: 0; height: 150px; width: auto; opacity: 0; transition: opacity 0.3s, transform 0.3s;">
+  <div class="parceiro-hover">
+    <img src="img/vitaurbana.png" alt="Vita Urbana">
+    <img class="overlay" src="img/qra_vita.jpg" alt="QRA Vita Urbana">
   </div>
 
-  <div style="position: relative; overflow: hidden;">
-    <img src="img/CONFRARIA.jpg" alt="Confraria" style="height: 150px; cursor: pointer; transition: transform 0.3s;">
-    <img src="img/qra_confraria.jpg" alt="QRA Confraria" style="position: absolute; top: 0; left: 0; height: 150px; width: auto; opacity: 0; transition: opacity 0.3s, transform 0.3s;">
+  <div class="parceiro-hover">
+    <img src="img/CONFRARIA.jpg" alt="Confraria">
+    <img class="overlay" src="img/qra_confraria.jpg" alt="QRA Confraria">
   </div>
 
-  <div style="position: relative; overflow: hidden;">
-    <img src="img/jai.png" alt="Jai" style="height: 150px; cursor: pointer; transition: transform 0.3s;">
-    <img src="img/qra_jai.jpg" alt="QRA Jai" style="position: absolute; top: 0; left: 0; height: 150px; width: auto; opacity: 0; transition: opacity 0.3s, transform 0.3s;">
+  <div class="parceiro-hover">
+    <img src="img/jai.png" alt="Jai">
+    <img class="overlay" src="img/qra_jai.jpg" alt="QRA Jai">
   </div>
 
-  <div style="position: relative; overflow: hidden;">
-    <img src="img/saletabar.jpg" alt="Saleta" style="height: 150px; cursor: pointer; transition: transform 0.3s;">
-    <img src="img/qra_saleta.jpg" alt="QRA Saleta" style="position: absolute; top: 0; left: 0; height: 150px; width: auto; opacity: 0; transition: opacity 0.3s, transform 0.3s;">
+  <div class="parceiro-hover">
+    <img src="img/saletabar.jpg" alt="Saleta">
+    <img class="overlay" src="img/qra_saleta.jpg" alt="QRA Saleta">
   </div>
 
-  <div style="position: relative; overflow: hidden;">
-    <img src="img/metalbar.png" alt="The Metal Bar" style="height: 150px; cursor: pointer; transition: transform 0.3s;">
-    <img src="img/qra_metalbar.jpg" alt="QRA Metal Bar" style="position: absolute; top: 0; left: 0; height: 150px; width: auto; opacity: 0; transition: opacity 0.3s, transform 0.3s;">
+  <div class="parceiro-hover">
+    <img src="img/metalbar.png" alt="The Metal Bar">
+    <img class="overlay" src="img/qra_metalbar.jpg" alt="QRA Metal Bar">
   </div>
 
-  <div style="position: relative; overflow: hidden;">
-    <img src="img/varal.png" alt="Varal Bar" style="height: 50px; cursor: pointer; transition: transform 0.3s;">
-    <img src="img/qra_varal.jpg" alt="QRA Varal" style="position: absolute; top: 0; left: 0; height: 150px; width: auto; opacity: 0; transition: opacity 0.3s, transform 0.3s;">
+  <div class="parceiro-hover">
+    <img src="img/varal.png" alt="Varal Bar">
+    <img class="overlay" src="img/qra_varal.jpg" alt="QRA Varal">
   </div>
 
-  <div style="position: relative; overflow: hidden;">
-    <img src="img/fachada.png" alt="Fachada" style="height: 150px; cursor: pointer; transition: transform 0.3s;">
-    <img src="img/qra_fachada.jpg" alt="QRA Fachada" style="position: absolute; top: 0; left: 0; height: 150px; width: auto; opacity: 0; transition: opacity 0.3s, transform 0.3s;">
+  <div class="parceiro-hover">
+    <img src="img/fachada.png" alt="Fachada">
+    <img class="overlay" src="img/qra_fachada.jpg" alt="QRA Fachada">
   </div>
 
-  <div style="position: relative; overflow: hidden;">
-    <img src="img/cachorrabar.jpg" alt="Cachorra Bar" style="height: 150px; cursor: pointer; transition: transform 0.3s;">
-    <img src="img/qra_cachorrabar.jpg" alt="QRA Cachorra Bar" style="position: absolute; top: 0; left: 0; height: 150px; width: auto; opacity: 0; transition: opacity 0.3s, transform 0.3s;">
+  <div class="parceiro-hover">
+    <img src="img/cachorrabar.jpg" alt="Cachorra Bar">
+    <img class="overlay" src="img/qra_cachorrabar.jpg" alt="QRA Cachorra Bar">
   </div>
-</div>
+ </div>
 <footer style="text-align: center; padding: 10px; background-color: #111; color: #fff; font-size: 14px;">
   &copy; 2025 Front Security. Todos os direitos reservados.
 </footer>
-  <script>
-   const items = document.querySelectorAll('div[style*="position: relative"]');
-   items.forEach(item => {
-     const logo = item.querySelector('img:first-child');
-     const overlay = item.querySelector('img:last-child');
-
-   logo.addEventListener('mouseenter', () => {
-     overlay.style.opacity = '1';
-     overlay.style.transform = 'scale(1.05)';
-    });
-
-   logo.addEventListener('mouseleave', () => {
-     overlay.style.opacity = '0';
-     overlay.style.transform = 'scale(1)';
-    });
-  });
-  </script>
   <script>
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
