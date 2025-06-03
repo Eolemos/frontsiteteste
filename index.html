@@ -89,10 +89,30 @@
       border-radius: 5px;
     }
 
-    .logo {
-      filter: drop-shadow(0 0 0 white) drop-shadow(0.1px 0 0 white) drop-shadow(-0.1px 0 0 white)
-      drop-shadow(0 0.2px 0 white) drop-shadow(0 -0.1px 0 white);
-    }
+.logo {
+  position: relative;
+  display: inline-block;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('paginas/img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+  filter: brightness(0) saturate(100%) invert(100%); /* Torna tudo branco */
+  transform: scale(1.03); /* Espessura do contorno */
+}
+
+.logo img {
+  position: relative;
+  z-index: 1;
+}
 
   </style>
 </head>
