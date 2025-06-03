@@ -89,38 +89,15 @@
       border-radius: 5px;
     }
 
-.logo {
-  position: relative;
-  display: inline-block;
-}
-
-.logo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('paginas/img/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 0;
-  filter: brightness(0) saturate(100%) invert(100%); /* Torna tudo branco */
-  transform: scale(1.01); /* Espessura do contorno */
-}
-
-.logo img {
-  position: relative;
-  z-index: 1;
-}
+    .logo {
+      filter: drop-shadow(0 0 1px white);
+    }
 
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">  
-    <img src="paginas/img/logo.png" alt="Front Security" height="65">
-    </div>
+    <img src="paginas/img/logo.png" claas="logo" alt="Front Security" height="65">
     <div class="menu-toggle" id="menu-toggle">
       <span></span>
       <span></span>
