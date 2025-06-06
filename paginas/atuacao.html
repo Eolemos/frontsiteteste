@@ -1,48 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Front Security - Áreas de Atuação</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Front Security – Áreas de Atuação</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      font-family: 'Roboto', sans-serif;
-      min-height: 100vh;
+    /* ========== RESET & BASE ========== */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: #f9f9f9;
-      color: #222;
+      padding: 0;
     }
 
-    .content {
-      flex: 1;
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ========== HEADER ========== */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     header {
       background: #000;
       color: #fff;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
-      padding: 1rem;
+      padding: 2rem 2rem; /* acomoda logo */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      animation: fadeInDown 1s ease;
+    }
+
+    .logo {
+      position: absolute;
+      left: 2rem;
+      top: 1rem; /* centraliza verticalmente dentro do header */
+      height: 65px;
+      filter: drop-shadow(0 0 1px white);
+      z-index: 11;
+      animation: popIn 1s ease;
     }
 
     nav {
       display: flex;
-      gap: 1rem;
+      gap: 2rem;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.2rem;
+      position: relative;
+      padding-bottom: 4px;
+      animation: fadeIn 1s ease-in-out;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #fca311;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
+      margin-left: 1rem;
+      z-index: 11;
     }
 
     .menu-toggle span {
@@ -50,6 +110,7 @@
       height: 3px;
       width: 25px;
       margin: 4px 0;
+      animation: fadeIn 1s ease-in-out;
     }
 
     @media (max-width: 768px) {
@@ -58,34 +119,50 @@
         flex-direction: column;
         background: #000;
         position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        padding: 1rem;
+        top: 80px; /* abaixo do header */
+        right: 20px;
+        width: 150px;
+        padding: 0.5rem 0;
+        text-align: center;
+        border-radius: 0 0 5px 5px;
+        z-index: 9;
       }
-
       nav.show {
         display: flex;
       }
-
+      nav a {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+      }
       .menu-toggle {
         display: flex;
       }
+    }
+
+    /* ========== CONTENT ========== */
+    .content {
+      flex: 1;
+      padding: 8rem 2rem 2rem; /* espaço superior para header */
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 1s ease-in-out;
     }
 
     h1 {
       color: #0d1b2a;
       font-size: 2.5rem;
       text-align: center;
-      margin: 2rem 0;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease;
     }
 
+    /* Grades de cartões de área */
     .areas-container {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1rem;
-      justify-content: center;
+      gap: 1.5rem;
       padding: 0 2rem;
+      animation: fadeIn 1s ease-in-out;
     }
 
     @media (min-width: 768px) {
@@ -97,25 +174,28 @@
     .area-card {
       background: #fff;
       border-left: 5px solid #fca311;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       border-radius: 8px;
-      padding: 1rem;
+      padding: 1.5rem;
       display: flex;
       align-items: center;
       flex-direction: column;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease;
     }
 
     .area-card:hover {
       transform: scale(1.05);
       z-index: 10;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .area-card img {
       width: 50px;
       height: 50px;
-      transition: all 0.3s ease;
+      transition: width 0.3s ease, height 0.3s ease;
+      animation: fadeIn 0.8s ease-in-out;
     }
 
     .area-card:hover img {
@@ -128,6 +208,7 @@
       font-weight: 600;
       margin-top: 0.5rem;
       transition: font-size 0.3s ease;
+      animation: fadeInUp 0.8s ease;
     }
 
     .area-card:hover span {
@@ -139,81 +220,87 @@
       margin-top: 0.5rem;
       font-size: 0.9rem;
       color: #666;
+      animation: fadeIn 0.8s ease-in-out;
     }
 
     .area-card:hover .extra-info {
       display: block;
     }
-    
-    .logo {
-      filter: drop-shadow(0 0 1px white);
-    }
 
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #fff;
+      font-size: 0.9rem;
+      animation: fadeIn 1s ease;
+    }
   </style>
 </head>
+
 <body>
   <header>
-    <img src="img/logo.png" class="logo" alt="Front Security" height="65">
+    <img src="img/logo.png" class="logo" alt="Front Security" />
+    <nav id="menu">
+      <a href="../index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="parceiros.html">Parceiros</a>
+      <a href="contato.html">Contato</a>
+    </nav>
     <div class="menu-toggle" id="menu-toggle">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <nav id="menu">
-      <a href="../index.html">Início</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="atuacao.html">Áreas de Atuação</a>
-      <a href="parceiros.html">Parceiros</a>
-      <a href="contato.html">Contato</a>
-    </nav>
   </header>
-<div class="content">
-  <h1>Áreas de Atuação</h1>
-  <div class="areas-container">
-    <div class="area-card">
-      <img src="img/condominio.png" alt="Condomínios">
-      <span>Condomínios</span>
-      <div class="extra-info">Proteção completa para áreas comuns, acessos e moradores 24h.</div>
-    </div>
-    <div class="area-card">
-      <img src="img/predio.png" alt="Prédios Comerciais">
-      <span>Prédios Comerciais</span>
-      <div class="extra-info">Acesso seguro para prédios e empresas comerciais.</div>
-    </div>
-    <div class="area-card">
-      <img src="img/stand.png" alt="Stands de Vendas">
-      <span>Stands de Vendas</span>
-      <div class="extra-info">Segurança especializada para lançamentos e feiras.</div>
-    </div>
-    <div class="area-card">
-      <img src="img/terreno.png" alt="Terrenos">
-      <span>Terrenos</span>
-      <div class="extra-info">Monitoramento de terrenos abertos e construções paradas.</div>
-    </div>
-    <div class="area-card">
-      <img src="img/residencia.png" alt="Residências">
-      <span>Residências</span>
-      <div class="extra-info">Proteção personalizada para residências e famílias.</div>
-    </div>
-    <div class="area-card">
-      <img src="img/evento.png" alt="Eventos">
-      <span>Eventos</span>
-      <div class="extra-info">Controle de acesso em eventos com grande público.</div>
+
+  <div class="content">
+    <h1>Áreas de Atuação</h1>
+    <div class="areas-container">
+      <div class="area-card">
+        <img src="img/condominio.png" alt="Condomínios">
+        <span>Condomínios</span>
+        <div class="extra-info">Proteção completa para áreas comuns, acessos e moradores 24h.</div>
+      </div>
+      <div class="area-card">
+        <img src="img/predio.png" alt="Prédios Comerciais">
+        <span>Prédios Comerciais</span>
+        <div class="extra-info">Acesso seguro para prédios e empresas comerciais.</div>
+      </div>
+      <div class="area-card">
+        <img src="img/stand.png" alt="Stands de Vendas">
+        <span>Stands de Vendas</span>
+        <div class="extra-info">Segurança especializada para lançamentos e feiras.</div>
+      </div>
+      <div class="area-card">
+        <img src="img/terreno.png" alt="Terrenos">
+        <span>Terrenos</span>
+        <div class="extra-info">Monitoramento de terrenos abertos e construções paradas.</div>
+      </div>
+      <div class="area-card">
+        <img src="img/residencia.png" alt="Residências">
+        <span>Residências</span>
+        <div class="extra-info">Proteção personalizada para residências e famílias.</div>
+      </div>
+      <div class="area-card">
+        <img src="img/evento.png" alt="Eventos">
+        <span>Eventos</span>
+        <div class="extra-info">Controle de acesso em eventos com grande público.</div>
+      </div>
     </div>
   </div>
-</div>
+
+  <footer>
+    &copy; 2025 Front Security. Todos os direitos reservados.
+  </footer>
 
   <script>
     const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+    const menu   = document.getElementById('menu');
     toggle.addEventListener('click', () => {
       menu.classList.toggle('show');
     });
   </script>
-<div class="content">
-<footer style="text-align: center; padding: 10px; background-color: #111; color: #fff; font-size: 14px;">
-  &copy; 2025 Front Security. Todos os direitos reservados.
-</footer>
-</div>
 </body>
 </html>
