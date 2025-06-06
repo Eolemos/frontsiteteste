@@ -119,7 +119,7 @@
       z-index: 1;
     }
 
-    .hero h1, .hero a {
+    .hero h1, .hero a, .hero img {
       position: relative;
       z-index: 2;
     }
@@ -135,6 +135,17 @@
       color: #fff;
       text-shadow: 2px 2px 6px #000;
       animation: fadeInUp 1.2s ease;
+    }
+
+    .hero img {
+      height: 100px;
+      margin-bottom: 1rem;
+      animation: popIn 1.5s ease;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .hero a button {
@@ -239,6 +250,7 @@
   </header>
 
   <div class="hero">
+    <img src="paginas/img/logo.png" alt="Front Security" />
     <h1>Excelência, confiança e presença onde a sua segurança importa.</h1>
     <a href="https://wa.me/5511932268005"><button>Fale Conosco no WhatsApp</button></a>
   </div>
