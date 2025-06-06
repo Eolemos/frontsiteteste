@@ -20,18 +20,18 @@
     }
 
     header {
-      background: #000;
+      background: transparent; /* Fundo transparente */
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 1rem 2rem;
-      position: relative;
+      position: absolute;
+      width: 100%;
       z-index: 10;
       animation: fadeInDown 1s ease;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+      /* Sem box-shadow para não parecer barra sólida */
     }
-
 
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
@@ -50,24 +50,14 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
+      /* brilho suave para destacar */
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+      transition: text-shadow 0.3s ease;
       position: relative;
     }
 
-    nav a::after {
-      content: '';
-      display: block;
-      height: 2px;
-      background: #fca311;
-      transition: width 0.3s;
-      width: 0;
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-    }
-
-    nav a:hover::after {
-      width: 100%;
+    nav a:hover {
+      text-shadow: 0 0 12px rgba(255, 255, 255, 1);
     }
 
     .menu-toggle {
@@ -76,7 +66,7 @@
       cursor: pointer;
       position: absolute;
       top: 20px;
-      left: 20px; /* Coloca o menu hambúrguer à esquerda no mobile */
+      left: 20px; /* Menu hambúrguer à esquerda no mobile */
     }
 
     .menu-toggle span {
@@ -145,6 +135,11 @@
       animation: fadeInUp 1.2s ease;
     }
 
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .hero img {
       height: 100px;
       margin-bottom: 1rem;
@@ -190,11 +185,6 @@
       background: #fff;
       color: #111;
       animation: fadeInUp 1s ease;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .section h2 {
