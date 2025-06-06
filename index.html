@@ -23,7 +23,7 @@
       background: transparent;
       color: #fff;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end; /* Alinha tudo à direita */
       align-items: center;
       padding: 1.5rem 2rem;
       position: absolute;
@@ -41,6 +41,7 @@
       display: none;
       flex-direction: column;
       cursor: pointer;
+      margin-left: 1rem; /* Espaço entre nav e toggle */
     }
 
     .menu-toggle span {
@@ -257,17 +258,17 @@
 </head>
 <body>
   <header>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
     <nav id="menu">
       <a href="paginas/servicos.html">Serviços</a>
       <a href="paginas/atuacao.html">Áreas de Atuação</a>
       <a href="paginas/parceiros.html">Parceiros</a>
       <a href="paginas/contato.html">Contato</a>
     </nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
   <div class="hero">
