@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato - Front Security</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato – Front Security</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    /* ========== RESET & BASE ========== */
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+    body {
       font-family: 'Roboto', sans-serif;
       background: #f9f9f9;
       color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
+    /* ========== HEADER ========== */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
     header {
       background: #000;
       color: #fff;
@@ -20,87 +33,157 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem;
+      animation: fadeInDown 1s ease;
+      position: relative;
     }
-
+    .logo {
+      filter: drop-shadow(0 0 1px white);
+    }
     nav {
       display: flex;
       gap: 1rem;
     }
-
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      position: relative;
+      padding-bottom: 4px;
     }
-
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: #fca311;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
     }
-
     .menu-toggle span {
       background: #fff;
       height: 3px;
       width: 25px;
       margin: 4px 0;
     }
-
     @media (max-width: 768px) {
       nav {
         display: none;
         flex-direction: column;
         background: #000;
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: 0;
         width: 200px;
         padding: 1rem;
       }
-
-      nav.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
+      nav.show { display: flex; }
+      .menu-toggle { display: flex; }
     }
 
+    /* ========== CONTENT ========== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
     .content {
-      padding: 2rem;
+      flex: 1;
+      padding: 6rem 2rem 2rem;
       max-width: 800px;
       margin: auto;
-      animation: fadeIn 1s ease-in;
+      animation: fadeIn 1s ease-in-out;
     }
-
     h1 {
-      color: #14213d;
+      color: #0d1b2a;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1s ease;
     }
-
     p {
       font-size: 1.1rem;
       line-height: 1.6;
+      margin-bottom: 1rem;
+      animation: fadeIn 1s ease;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      animation: fadeIn 1s ease;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .form-group input,
+    .form-group textarea {
+      padding: 0.75rem 1rem;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #fca311;
+      outline: none;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .btn-submit {
+      background: #fca311;
+      color: #111;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background 0.3s ease, transform 0.3s ease;
+      align-self: center;
+    }
+    .btn-submit:hover {
+      background: #e08e00;
+      transform: scale(1.03);
     }
 
     .contact-info {
       margin-top: 2rem;
       font-size: 1.2rem;
+      animation: fadeIn 1s ease;
     }
-
     .contact-info strong {
       color: #fca311;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #fff;
+      font-size: 0.9rem;
+      animation: fadeIn 1s ease;
     }
-    
-    .logo {
-      filter: drop-shadow(0 0 1px white);
-    }
-
   </style>
 </head>
 <body>
@@ -121,20 +204,45 @@
   </header>
 
   <div class="content">
-    <h1>Contato</h1>
-    <p>Entre em contato com a Front Security para solicitar um orçamento ou tirar suas dúvidas.</p>
+    <h1>Entre em Contato</h1>
+    <p>Preencha o formulário abaixo para solicitar um orçamento ou tirar suas dúvidas. Nossa equipe retornará o mais rápido possível.</p>
+
+    <div class="form-container">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Nome Completo</label>
+          <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" placeholder="(11) 9 9999-9999" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+      </form>
+    </div>
+
     <div class="contact-info">
       <p><strong>Telefone / WhatsApp:</strong> (11) 93226-8005</p>
       <p><strong>Email:</strong> wjrpiccinini@gmail.com</p>
-      <p><strong>Atendimento:</strong> Segunda à sexta, das 08h às 18h</p>
+      <p><strong>Atendimento:</strong> Segunda à Sexta, das 08h às 18h</p>
     </div>
   </div>
-<footer style="text-align: center; padding: 10px; background-color: #111; color: #fff; font-size: 14px;">
-  &copy; 2025 Front Security. Todos os direitos reservados.
-</footer>
+
+  <footer>
+    &copy; 2025 Front Security. Todos os direitos reservados.
+  </footer>
+
   <script>
     const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+    const menu   = document.getElementById('menu');
     toggle.addEventListener('click', () => {
       menu.classList.toggle('show');
     });
