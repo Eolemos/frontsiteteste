@@ -115,42 +115,30 @@
       animation: fadeIn 1s ease;
     }
 
-    .form-container {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      animation: fadeIn 1s ease;
-    }
-    .form-group {
-      margin-bottom: 1rem;
+    .whatsapp-form {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+      animation: fadeIn 1s ease;
     }
-    .form-group label {
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    .form-group input,
-    .form-group textarea {
+    .whatsapp-form input {
       padding: 0.75rem 1rem;
       border: 2px solid #ccc;
       border-radius: 5px;
       font-size: 1rem;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 1rem;
       transition: border-color 0.3s ease;
     }
-    .form-group input:focus,
-    .form-group textarea:focus {
+    .whatsapp-form input:focus {
       border-color: #fca311;
       outline: none;
     }
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-    .btn-submit {
-      background: #fca311;
-      color: #111;
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
       padding: 0.75rem 2rem;
       font-size: 1.1rem;
       font-weight: bold;
@@ -159,10 +147,9 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: background 0.3s ease, transform 0.3s ease;
-      align-self: center;
     }
-    .btn-submit:hover {
-      background: #e08e00;
+    .btn-whatsapp:hover {
+      background: #1ebe57;
       transform: scale(1.03);
     }
 
@@ -205,28 +192,11 @@
 
   <div class="content">
     <h1>Entre em Contato</h1>
-    <p>Preencha o formulário para enviar uma mensagem diretamente para nosso e-mail.</p>
+    <p>Para enviar uma mensagem diretamente ao nosso WhatsApp, digite seu nome e clique no botão abaixo:</p>
 
-    <div class="form-container">
-      <form action="https://formspree.io/f/replace_with_your_id" method="POST">
-        <div class="form-group">
-          <label for="name">Nome Completo</label>
-          <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Telefone / WhatsApp</label>
-          <input type="tel" id="phone" name="phone" placeholder="(11) 9 9999-9999" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Mensagem</label>
-          <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." required></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Enviar Mensagem</button>
-      </form>
+    <div class="whatsapp-form">
+      <input type="text" id="wa-name" placeholder="Digite seu nome" required>
+      <button class="btn-whatsapp" onclick="sendWhatsApp()">Enviar Mensagem via WhatsApp</button>
     </div>
 
     <div class="contact-info">
@@ -246,6 +216,16 @@
     toggle.addEventListener('click', () => {
       menu.classList.toggle('show');
     });
+
+    function sendWhatsApp() {
+      const name = document.getElementById('wa-name').value.trim();
+      if (!name) {
+        alert('Por favor, digite seu nome.');
+        return;
+      }
+      const text = encodeURIComponent(`Olá, meu nome é ${name}. Gostaria de mais informações.`);
+      window.open(`https://wa.me/5511932268005?text=${text}`, '_blank');
+    }
   </script>
 </body>
 </html>
