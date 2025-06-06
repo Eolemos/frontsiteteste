@@ -23,7 +23,7 @@
       background: transparent;
       color: #fff;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-end; /* Alinha tudo à direita */
       align-items: center;
       padding: 1.5rem 2rem;
       position: absolute;
@@ -34,14 +34,14 @@
 
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      margin-left: 1rem;
+      margin-left: 1rem; /* Espaço entre nav e toggle */
     }
 
     .menu-toggle span {
@@ -60,12 +60,13 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.2rem; /* Tamanho dos links */
       position: relative;
       padding-bottom: 4px;
       transition: color 0.3s ease;
     }
 
+    /* Linha amarela que cresce da esquerda para direita */
     nav a::after {
       content: '';
       position: absolute;
@@ -90,10 +91,10 @@
         flex-direction: column;
         background: #000;
         position: absolute;
-        top: 60px;
-        right: 20px;
-        width: 150px;
-        padding: 0.5rem 0;
+        top: 60px; /* altura do header */
+        right: 20px; /* alinhar menu à direita */
+        width: 150px; /* reduzido de 180px */
+        padding: 0.5rem 0; /* reduzido de 1rem */
         text-align: center;
         border-radius: 0 0 5px 5px;
         z-index: 9;
@@ -102,8 +103,8 @@
         display: flex;
       }
       nav a {
-        font-size: 1rem;
-        padding: 0.6rem 0;
+        font-size: 1rem; /* Fonte leve para mobile */
+        padding: 0.6rem 0; /* Ajustado */
       }
     }
 
@@ -128,7 +129,7 @@
 
     @keyframes fadeIn {
       from { opacity: 0; }
-      to   { opacity: 1; }
+      to { opacity: 1; }
     }
 
     .hero h1, .hero a, .hero img {
@@ -146,7 +147,7 @@
 
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero img {
@@ -157,7 +158,7 @@
 
     @keyframes popIn {
       from { opacity: 0; transform: scale(0.9); }
-      to   { opacity: 1; transform: scale(1); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .hero a button {
@@ -175,8 +176,8 @@
     }
 
     @keyframes pulse {
-      0%,100% { transform: scale(1); }
-      50%     { transform: scale(1.05); }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
 
     .hero a button:hover {
@@ -196,16 +197,9 @@
       animation: fadeInUp 1s ease;
     }
 
-    .section.dark {
-      background: #0d1b2a;
-      color: #eee;
-    }
-
-    .section.dark h2 {
-      color: #fca311;
-    }
-    .section.dark p {
-      color: #ccc;
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .section h2 {
@@ -218,7 +212,6 @@
       max-width: 700px;
       margin: auto;
       font-size: 1.3rem;
-      line-height: 1.6;
     }
 
     .benefits {
@@ -239,16 +232,6 @@
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .section.dark .benefit {
-      background: #1a2c3f;
-      color: #eee;
-      border-left: 5px solid #fca311;
-    }
-
-    .section.dark .benefit h3 {
-      color: #fca311;
-    }
-
     .benefit:hover {
       transform: translateY(-8px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.2);
@@ -264,93 +247,11 @@
       font-size: 1.1rem;
     }
 
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .service-item {
-      background: #f1f1f1;
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: left;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .section.dark .service-item {
-      background: #1a2c3f;
-      color: #eee;
-    }
-
-    .service-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-
-    .service-item h3 {
-      color: #fca311;
-      margin-bottom: 0.8rem;
-      font-size: 1.5rem;
-    }
-
-    .service-item p {
-      font-size: 1rem;
-      margin: 0;
-      text-align: left;
-      color: #555;
-    }
-
-    .section.dark .service-item p {
-      color: #ccc;
-    }
-
-    .cta-section {
-      background: linear-gradient(to right, #fca311, #ffbf00);
-      color: #111;
-      padding: 5rem 2rem;
-      text-align: center;
-    }
-
-    .cta-section h2 {
-      color: #0d1b2a;
-      font-size: 2.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-section p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-section a button {
-      background: #0d1b2a;
-      color: #fca311;
-      border: none;
-      padding: 1.5rem 3.5rem;
-      font-size: 1.4rem;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    }
-
-    .cta-section a button:hover {
-      background: #1a2c3f;
-      color: #fff;
-      transform: translateY(-3px);
-    }
-
     footer {
       text-align: center;
       padding: 1.2rem;
       background-color: #000;
-      color: #fff;
+      color: #ffffff;
       font-size: 1rem;
     }
   </style>
@@ -381,96 +282,23 @@
     <p>
       Somos uma empresa especializada em segurança patrimonial, controle de acesso e monitoramento,
       com presença em diversos segmentos e atuação em toda a região de São Paulo. Nossa missão é proteger o que
-      realmente importa para você, com soluções integradas e personalizadas que garantem a sua tranquilidade e a integridade do seu patrimônio.
+      realmente importa pra você.
     </p>
 
     <div class="benefits">
       <div class="benefit">
         <h3>✔️ Equipe Qualificada</h3>
-        <p>Nossos profissionais são cuidadosamente selecionados, treinados e certificados, passando por constantes atualizações para atuar com a máxima eficiência e discrição, garantindo sua tranquilidade e a segurança do seu ambiente.</p>
+        <p>Profissionais treinados e certificados para garantir sua tranquilidade.</p>
       </div>
       <div class="benefit">
         <h3>✔️ Monitoramento 24h</h3>
-        <p>Com sistemas de segurança de última geração e uma central de monitoramento operando 24 horas por dia, 7 dias por semana, seu patrimônio está sempre sob vigilância constante, pronto para responder a qualquer incidente com agilidade.</p>
+        <p>Sistemas integrados para vigiar seu patrimônio o tempo todo.</p>
       </div>
       <div class="benefit">
         <h3>✔️ Atendimento Personalizado</h3>
-        <p>Entendemos que cada cliente tem necessidades únicas. Por isso, desenvolvemos planos de segurança sob medida, após uma análise detalhada da sua operação, garantindo as soluções mais eficazes e adequadas para sua real necessidade.</p>
+        <p>Planos sob medida para a real necessidade da sua operação.</p>
       </div>
     </div>
-  </div>
-
-  <div class="section dark">
-    <h2>Nossos Serviços Abrangentes</h2>
-    <p>Oferecemos um portfólio completo de serviços de segurança, projetados para atender às mais diversas demandas e proteger o seu patrimônio de forma integral.</p>
-
-    <div class="service-grid">
-      <div class="service-item">
-        <h3>Segurança Patrimonial</h3>
-        <p>Atuação preventiva e ostensiva para garantir a segurança de empresas, condomínios e eventos. Nossos vigilantes são altamente treinados para proteger bens e pessoas, inibindo ações criminosas e garantindo a ordem no local.</p>
-      </div>
-      <div class="service-item">
-        <h3>Controle de Acesso</h3>
-        <p>Implementação de sistemas avançados para gestão e restrição de entrada e saída de pessoas e veículos. Isso inclui portaria remota, biometria, cartões de acesso e softwares inteligentes, proporcionando total controle e segurança.</p>
-      </div>
-      <div class="service-item">
-        <h3>Monitoramento Eletrônico</h3>
-        <p>Tecnologia de ponta com câmeras de alta definição (CFTV), alarmes monitorados e sensores inteligentes. Nossa central de monitoramento 24h garante respostas rápidas e eficazes a qualquer sinal de alerta.</p>
-      </div>
-      <div class="service-item">
-        <h3>Consultoria em Segurança</h3>
-        <p>Análise de riscos e elaboração de projetos de segurança personalizados para sua necessidade. Nossa consultoria visa identificar vulnerabilidades e propor as melhores soluções para otimizar sua proteção.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Tecnologia e Inovação a Serviço da Sua Segurança</h2>
-    <p>
-      Na Front Security, investimos continuamente em tecnologia e inovação para oferecer as soluções mais eficientes e modernas do mercado.
-      Utilizamos inteligência artificial, análise de dados e equipamentos de última geração para prever e mitigar riscos, garantindo uma segurança proativa e inteligente.
-    </p>
-    <div class="benefits">
-      <div class="benefit">
-        <h3>Sistemas Integrados</h3>
-        <p>Conectamos diferentes tecnologias de segurança para uma visão 360° do seu ambiente, desde câmeras com reconhecimento facial até alarmes com sensores de presença.</p>
-      </div>
-      <div class="benefit">
-        <h3>Análise de Dados</h3>
-        <p>Utilizamos dados para identificar padrões e otimizar nossas estratégias de segurança, aumentando a eficácia das nossas operações e reduzindo riscos potenciais.</p>
-      </div>
-      <div class="benefit">
-        <h3>Equipamentos Modernos</h3>
-        <p>Investimos em equipamentos de ponta para garantir a melhor performance e durabilidade, desde drones de vigilância até softwares de gestão de segurança avançados.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section dark">
-    <h2>Nossa Abordagem: Confiança e Compromisso</h2>
-    <p>
-      Na Front Security, a confiança e o compromisso são os pilares do nosso trabalho. Sabemos que a segurança é um aspecto fundamental da sua vida e dos seus negócios, e por isso, nos dedicamos a construir relacionamentos sólidos e duradouros com nossos clientes.
-    </p>
-    <div class="benefits">
-      <div class="benefit">
-        <h3>Ética e Transparência</h3>
-        <p>Atuamos com total transparência em todas as etapas, desde a proposta até a execução dos serviços, garantindo a ética e a conformidade com as normas regulatórias.</p>
-      </div>
-      <div class="benefit">
-        <h3>Suporte Contínuo</h3>
-        <p>Nosso compromisso não termina com a instalação. Oferecemos suporte técnico e operacional contínuo, garantindo que nossos sistemas e equipes estejam sempre prontos para atender às suas necessidades.</p>
-      </div>
-      <div class="benefit">
-        <h3>Satisfação do Cliente</h3>
-        <p>Priorizamos a satisfação total de nossos clientes. Sua segurança é nossa maior meta, e trabalhamos incansavelmente para superar suas expectativas e oferecer a paz de espírito que você merece.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta-section">
-    <h2>Pronto para Ter a Segurança que Você Merece?</h2>
-    <p>Não deixe a sua segurança para depois. Fale com nossos especialistas e descubra como a Front Security pode oferecer soluções personalizadas para proteger o que é mais importante para você.</p>
-    <a href="https://wa.me/5511932268005"><button>Solicite um Orçamento Sem Compromisso</button></a>
   </div>
 
   <footer>
