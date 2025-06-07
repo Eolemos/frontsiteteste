@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Front Security – Nossos Parceiros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== RESET & BASE ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ========== ANIMAÇÕES ========== */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between; /* mantém como estava */
+      align-items: center;
+      padding: 1rem; /* mantém como estava */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      animation: fadeInDown 1s ease;
+    }
+    .logo {
+      filter: drop-shadow(0 0 1px white); /* mantém idêntico */
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      z-index: 10;
+      animation: fadeIn 0.8s ease;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: relative;
+      padding-bottom: 4px;
+      animation: fadeIn 1s ease-in-out;
+      transition: color 0.3s ease;
+    }
+    /* Barrinha amarela sob os links */
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 4px; /* destaque */
+      background: #fca311;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        width: 150px;
+        padding: 0.5rem 0;
+        text-align: center;
+        border-radius: 0 0 5px 5px;
+        z-index: 9;
+      }
+      nav.show {
+        display: flex;
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ========== CONTENT ========== */
+    .content {
+      flex: 1;
+      padding: 8rem 2rem 2rem; /* espaço para header */
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 1s ease-in-out;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease;
+      color: #0d1b2a;
+      font-size: 2.5rem;
+    }
+
+    .partners-grid {
+      display: flex; /* mantém flex-wrap como no seu código */
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Mantive exatamente as regras originais de cada logo */
+    .parceiro-hover {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .parceiro-hover img {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .parceiro-hover .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .parceiro-hover:hover .overlay {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .parceiro-hover.retangular img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+.parceiro-varal {
+  width: 300px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.parceiro-varal img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.parceiro-varal .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.parceiro-varal:hover .overlay {
+  opacity: 1;
+  transform: scale(1.05);
+}
+    
+    .logo {
+      filter: drop-shadow(0 0 1px white);
+    }
+
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #fff;
+      font-size: 0.9rem;
+      animation: fadeIn 1s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../img/logo.png" class="logo" alt="Front Security" height="65">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="menu">
+      <a href="../../">Início</a>
+      <a href="../servicos.html">Serviços</a>
+      <a href="../atuacao.html">Áreas de Atuação</a>
+      <a href="../contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <h1>Nossos Parceiros</h1>
+  <div class="partners-grid">
+    <div class="parceiro-hover">
+      <img src="../img/vitaurbana.png" alt="Vita Urbana">
+      <img class="overlay" src="../img/qra_vita.png" alt="QRA Vita Urbana">
+    </div>
+    <div class="parceiro-hover">
+      <img src="../img/CONFRARIA.jpg" alt="Confraria">
+      <img class="overlay" src="../img/qra_confraria.png" alt="QRA Confraria">
+    </div>
+    <div class="parceiro-hover">
+      <img src="../img/jai.png" alt="Jai">
+      <img class="overlay" src="../img/qra_jai.png" alt="QRA Jai">
+    </div>
+    <div class="parceiro-hover">
+      <img src="../img/saletabar.jpg" alt="Saleta">
+      <img class="overlay" src="../img/qra_saleta.png" alt="QRA Saleta">
+    </div>
+    <div class="parceiro-hover">
+      <img src="../img/metalbar.png" alt="The Metal Bar">
+      <img class="overlay" src="../img/qra_metalbar.png" alt="QRA Metal Bar">
+    </div>
+    <div class="parceiro-varal">
+      <img src="../img/varal.png" alt="Varal Bar">
+      <img class="overlay" src="../img/qra_varal.png" alt="QRA Varal">
+    </div>
+    <div class="parceiro-hover">
+      <img src="../img/fachada.png" alt="Fachada">
+      <img class="overlay" src="../img/qra_fachada.png" alt="QRA Fachada">
+    </div>
+    <div class="parceiro-hover">
+      <img src="../img/cachorrabar.jpg" alt="Cachorra Bar">
+      <img class="overlay" src="../img/qra_cachorrabar.png" alt="QRA Cachorra Bar">
+    </div>
+    <div class="parceiro-hover retangular">
+      <img src="../img/dnaeventos.png" alt="DNAEVENTOS">
+      <img class="overlay" src="../img/qra_dnaeventos.png" alt="QRA DNAEVENTOS">
+    </div>
+    <div class="parceiro-hover">
+      <img src="../img/mutala.png" alt="Mutala">
+      <img class="overlay" src="../img/qra_mutala.png" alt="QRA Mutala">
+    </div>
+    <div class="parceiro-hover">
+      <img src="../img/xyz.png" alt="XYZ">
+      <img class="overlay" src="../img/qra_XYZ.png" alt="QRA XYZ">
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Front Security. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu   = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
